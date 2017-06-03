@@ -1,0 +1,17 @@
+度假休闲,香港迪士尼乐园,香港迪士尼(电子票),//piao.damai.cn/48849.html,90,618
+度假休闲,香港海洋公园,香港海洋公园（电子票）,//piao.damai.cn/48823.html,188,348
+度假休闲,香港杜莎夫人蜡像馆,香港杜莎夫人蜡像馆（电子票）,//piao.damai.cn/48500.html,78,208
+演唱会,香港体育馆,林宥嘉《The Great Yoga》世界巡回演唱会 - 香港站,//piao.damai.cn/120871.html,300,3010
+演唱会,亚洲国际博览馆,金泰妍“PERSONA”香港演唱会2017,//piao.damai.cn/124110.html,680,1480
+演唱会,亚洲国际博览馆,BRITNEY SPEARS香港演唱会 2017,//piao.damai.cn/121889.html,588,2088
+演唱会,香港九龙湾国际展贸中心STAR HALL汇星,蔡健雅《列穆尼亚》巡回演唱会2017 香港站,//piao.damai.cn/121323.html,280,780
+演唱会,香港九龙湾国际展贸中心STAR HALL汇星,梁汉文《我的另一半》音乐会 2017,//piao.damai.cn/123126.html,280,680
+演唱会,亚洲国际博览馆,BTOB Time Concert IN HONG KONG 2017,//piao.damai.cn/124413.html,615,1515
+演唱会,香港九龙湾国际展贸中心STAR HALL汇星,EXID “Asia Tour in Hong Kong 2017” 香港见面会,//piao.damai.cn/124111.html,680,1380
+演唱会,香港九龙湾国际展贸中心STAR HALL汇星,早安少女组。17香港演唱会,//piao.damai.cn/119180.html,380,980
+演唱会,亚洲国际博览馆,Mege K Festival Summer Night Out In Hong Kong,//piao.damai.cn/124515.html,615,1970
+韩流地带,亚洲国际博览馆,BTOB Time Concert IN HONG KONG 2017,//piao.damai.cn/124413.html,615,1515
+韩流地带,香港九龙湾国际展贸中心STAR HALL汇星,EXID “Asia Tour in Hong Kong 2017” 香港见面会,//piao.damai.cn/124111.html,680,1380
+旅游演艺,香港迪士尼乐园,香港迪士尼(电子票),//piao.damai.cn/48849.html,90,618
+旅游演艺,香港海洋公园,香港海洋公园（电子票）,//piao.damai.cn/48823.html,188,348
+旅游演艺,香港杜莎夫人蜡像馆,香港杜莎夫人蜡像馆（电子票）,//piao.damai.cn/48500.html,78,208

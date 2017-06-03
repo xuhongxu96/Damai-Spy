@@ -1,23 +1,25 @@
 import requests
 from bs4 import BeautifulSoup
-import threading
 
-URL = "https://www.damai.cn/projectlist.do?cityID=%s&isText=1"
-cities = []
+URL = "https://www.damai.cn/projectlist.do?cityID=%s&mcid=%s&isText=1"
 
-def fetchList(soup, f):
+
+def fetch_list(soup, f, type):
     li_list = soup.find(id="performList").find_all("li")
     for li in li_list:
         a = li.find("a")
-        f.write(a.text.strip().replace(",", ";") + ",")
-        f.write(a["href"].strip().replace(",", ";") + ",")
-        price = li.find(attrs={"class": "price-sort"}).text.strip().split("-")
+        f.write(type + ",")  # 类型
+        f.write(li.find(attrs={"class": "ml20"}).find("a").text.strip().replace(",", ";") + ",")  # 场馆
+        f.write(a.text.strip().replace(",", ";") + ",")  # 名称
+        f.write(a["href"].strip().replace(",", ";") + ",")  # 连接
+        price = li.find(attrs={"class": "price-sort"}).text.strip().split("-")  # 价格区间
         if len(price) > 1:
             f.write(price[0] + "," + price[1] + "\n")
         else:
             f.write(price[0] + "," + price[0] + "\n")
 
-def fetchPageCount(soup):
+
+def fetch_page_count(soup):
     p = soup.find(attrs={"class": "pagination"})
     if p is None:
         return 1
@@ -25,32 +27,16 @@ def fetchPageCount(soup):
     p = p[1:-1]
     return int(p)
 
-def fetchCity(city, id):
-    with open(city + ".txt", "w") as f:
-        r = requests.get(URL % id)
+
+def fetch_city(city, city_id, type, type_id):
+    with open("res/" + city + ".txt", "a", encoding="utf-8") as f:
+        r = requests.get(URL % (city_id, type_id))
         soup = BeautifulSoup(r.text, "html.parser")
-        fetchList(soup, f)
-        page_count = fetchPageCount(soup)
+        fetch_list(soup, f, type)
+        print(city, type, "page", 1)
+        page_count = fetch_page_count(soup)
         for i in range(2, page_count + 1):
-            print(city, "page", i)
-            r = requests.get((URL % id) + "&pageIndex=" + str(i))
+            print(city, type, "page", i, "/", page_count)
+            r = requests.get((URL % (city_id, type_id)) + "&pageIndex=" + str(i))
             soup = BeautifulSoup(r.text, "html.parser")
-            fetchList(soup, f)
-
-
-with open("city_id.txt", "r") as f:
-    ct = f.readline()
-    for i in range(0, int(ct)):
-        l = f.readline()[:-1]
-        cities.append(l.split(","))
-
-threads = []
-
-for city, id in cities:
-    t = threading.Thread(target=fetchCity, args = (city, id))
-    t.daemon = True
-    t.start()
-    threads.append(t)
-
-for t in threads:
-    t.join()
+            fetch_list(soup, f, type)
