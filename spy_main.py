@@ -31,9 +31,9 @@ with open("res/type_id.txt", "r", encoding="utf-8") as f:
 
 threads = []
 for city, city_id in cities:
-    os.remove("res/" + city + ".txt")
+    if os.path.exists("res/" + city + ".txt"): os.remove("res/" + city + ".txt")
     for show_type, type_id in types:
-        if show_type in ["超级票", "优惠券", "票票堂", "电影优惠券", "周边商品"]: continue
+        if show_type in ["超级票", "优惠券", "票票堂", "电影优惠券", "周边商品", "旅游演艺"]: continue
         t = threading.Thread(target=spy_list.fetch_city, args=(city, city_id, show_type, type_id))
         t.daemon = True
         t.start()
